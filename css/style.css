@@ -1,0 +1,129 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+html {
+	text-align:center;
+	background:#F3F3F3;
+}
+body {
+	font:62.5% Verdana, Arial, Helvetica;
+	text-align:left;
+	color:#333;
+	width:80em;
+	margin:2em auto;
+	background:#FFF;
+	padding:1.3em;
+	background:#FFF url(../images/body_bg.gif) bottom repeat-x;
+	border:0.1em solid #EAEAEA;
+}
+
+/*head*/
+#masthead {
+	width:100%;
+	height:14em;
+	position:relative;
+	margin-bottom:0.3em;
+	background:url(../images/masthead_bg.gif) repeat-x;
+	line-height:14em;
+}
+/* main menu*/									
+#nav {
+	background:#F90 url(../images/nav_bg.gif) bottom repeat-x;
+	height:3.1em;
+	border-right:0.1em solid #ff7800;
+}
+
+#nav li a {
+	text-decoration:none;
+	display:block;
+	float:left;
+	background:#F90 url(../images/nav_bg.gif) bottom repeat-x;
+	line-height:1.6em;
+	color:#FFF;
+	font-weight:bold;
+	padding:0.5em 2em;
+	border-right:0.1em solid #F90;
+}
+
+#nav li a:hover {
+				background:#F90 url(../images/nav_bg_over.gif) bottom repeat-x;
+				}
+#nav li {
+	float:left;
+	font-size:1.2em;
+	border-right:0.1em solid #ff7800;
+	position:relative;
+}
+
+/* main content*/
+#mainContent {
+	width:75em;
+	padding:2em 0 2em 2em;
+	float:left;
+}
+
+
+#mainContent li {
+	background:url(../images/li_bullet.gif) left center no-repeat;
+	font-size:1.2em;
+	padding-left:1em;
+	margin:0 0 0.5em 1em;
+	color:#333;
+}
+
+/*end main content*/
+h3{
+   font-size:13px;
+   }
+
+p {
+	font-size:1.2em;
+	line-height:1.5em;
+	margin:1em 0;
+	text-align:justify;
+}
+
+a {
+	color:#004D85;
+	text-decoration:none;
+}
+
+
+ul {
+	list-style:none;
+}
+
+.imageborder {border: hidden;}
+
+#img {
+width: inherit;
+margin-top:10px}
+input[type=submit]{
+					background-color: #ff9900;
+       				color: #FFFFFF;
+					border:none;
+					border-radius:5px;
+					width:250px;
+					height:45px;
+					padding:0px 0px 0px 0px;
+					margin:20px auto 20px 60px;
+					border-color: #000000;
+					font-family: Georgia, "Times New Roman", Times, serif;
+					font-size:15px;
+					font-weight:bold;
+   					}
+input[type=submit]:hover{background-color: #ff8c00;}
+input[type=email],input[type=password],input[type=text]{
+														padding:10px 0px 0px 0px;
+														width:260px;
+														margin:10px auto 0px auto;}		
+
+
+#footer {
+	text-align:center;
+	clear:both;
+	padding:1em 0 0;
+	background:url(../images/footer_hr.gif) repeat-x;
+}

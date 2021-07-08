@@ -1,0 +1,212 @@
+<html>
+<head>
+<title>Xskynet-National Aeronautics and Space Administration's(NASA) Information</title>
+<head>
+
+<script language = "javascript">
+
+var whitespace="\t\n\r";
+
+function isempty(s)
+{
+	var  i;
+	if ((s==null) || (s.length==0))
+		return true;
+	for(i=0;i<s.length;i++)
+	{
+		var c=s.charAt(i);
+		if  (whitespace.indexOf(c)==-1)
+	
+			return false;
+	}
+	return true;
+}
+function isemail(field)
+{
+	var posofat;
+	var s=field.value;
+	if (isempty(s))
+	{
+		alert ("Email may not be empty");
+		field.focus();
+		exit();
+		return false;
+	}
+	posofat=s.indexOf('@',1);
+	if((posofat==-1) || (posofat==(s.length-1)))
+	{
+		alert ("Email not in valid form!");
+		field.value="";
+		field.focus();
+		return false;
+		exit();
+	}
+		return true;
+}
+function ischarinbag(string,bag)
+{
+	var i;
+	for(i=0;i<string.length;i++)
+	{
+		var charval=string.charAt(i);
+		if(bag.indexOf(charval)==-1)
+		exit();
+			return false;
+	}
+		return true;
+}
+
+function val()
+{
+var name=document.frmSample.txtfname.value
+var name2=document.frmSample.txtlname.value
+var email=document.frmSample.txtemail.value
+var mobl = document.frmSample.txtmno.value
+var desc = document.frmSample.txtdesc.value
+var subj=document.frmSample.txtsub.value
+
+	if(isempty(document.frmSample.txtfname.value))
+	{
+		alert ("First Name cannot be blank");
+		document.frmSample.txtfname.focus();
+		exit();
+		return false;
+	}
+	
+	if(isempty(document.frmSample.txtsub.value))
+	{
+		alert ("Subject cannot be blank");
+		document.frmSample.txtsub.focus();
+		
+		return false;
+	}
+        
+	if(isempty(document.frmSample.txtdesc.value))
+	{
+		alert ("description cannot be blank");
+		document.frmSample.txtdesc.focus();
+				return false;
+	}
+        
+        
+	var le = email.length
+	if(document.frmSample.txtemail.value=="")
+	{
+                  	alert("Enter Email-ID ")	
+		document.frmSample.txtemail.focus()
+		
+		return false
+	}
+	else(le>0)
+	{	
+		if((le < 5) || (email.indexOf('@')==-1) || (email.indexOf('.')==-1))
+		{
+			alert("ENTER PROPER E-MAIL ID")
+			document.frmSample.txtemail.focus()	
+			
+			return false
+		}
+	}
+
+		
+	
+ function getCount(){ 
+            var cn = new ActiveXObject("ADODB.Connection"); 
+            var strConn = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=c:\db1.mdb;Persist Security Info=False"; 
+            cn.Open(strConn); 
+            var rs = new ActiveXObject("ADODB.Recordset"); 
+            rs.Open(SQL, cn); 
+            alert(rs(0)); 
+            rs.Close(); 
+            cn.Close();  
+  
+        } 
+		
+		
+		function add()
+		{
+				
+				val(); 
+				 var fname=document.frmSample.txtfname.value
+				 var lname=document.frmSample.txtlname.value
+				 var email=document.frmSample.txtemail.value
+				 var mob=document.frmSample.txtmno.value
+				 var subject=document.frmSample.txtsub.value
+				var desc1=document.frmSample.txtdesc.value
+				 var cn = new ActiveXObject("ADODB.Connection"); 
+           		 var strConn = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=c:\\db1.mdb;Persist Security Info=False"; 
+            		
+					cn.Open(strConn);
+					
+					var sql="insert into feedback values('"+ (fname) +"','"+ (lname) +"','"+(email)+"','"+ (mob) +"','"+(subject)+"','"+(desc1)+"')";
+					
+					cn.execute(sql) ;
+					alert ('sucessfully submited');
+
+		}
+	</script>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+</head>
+<div id="masthead"><a href='index.html'><img src="images/name.png"></a></div>
+  <ul id="nav">
+  <li><a href='index.html'>Home</a></li>
+<li class="menu sfHover"><a href="Creation.html">Creation</a></li>
+  <li class="menu sfHover"><a href="Staff.html">Staff</a></li>
+  <li class="menu sfHover"><a href="Budget.html">Budget</a></li>
+  <li class="menu sfHover"><a href="Research.html"> Research</a></li>
+  <li class="menu sfHover"><a href="Gallery.html"> Gallery</a></li>
+  <li class="menu sfHover"><a href="Feedback.html">Feedback</a></li>  </ul>
+<body >
+
+<form name="frmSample" id="frmSample"  method="post" action="#" onSubmit="add();" >
+<BR/>
+  <table>
+   <tr>
+      <h2><td > Feecback </h2></td> </h2>
+   </tr>
+   </td><br><tr>
+<tr>
+     <td><h3>First Name :</h3></td>
+     <td>
+      <td><input type="text" name=txtfname size=20 maxlength=20>     
+   </tr>
+   <tr>
+      <td><h3>Last Name:</h3></td>
+   <td>
+      <td><input type="text" name=txtlname size=20 maxlength=20>	      
+   </tr>
+   <tr>
+      <td><h3>Email Address:</h3></td>
+      <td>
+      <td><input type="text" name=txtemail size=20 maxlength=30 id="txtemail">	      
+   </tr>
+   <tr>
+      <td><h3>Mobile Number:</h3></td>
+      <td>
+      <td><input type="text" name=txtmno size=20 maxlength=20 value=91- id="txtmno">	      
+   </tr>	
+   <tr>
+       <td><h3>Regarding:</h3></td>
+    <td> 
+    <td> <input type="text"  name=txtsub size=20 maxlength=20 id="txtsub" >
+</tr>
+<tr>
+	<td><h3>Descritption:</h3></td>
+<td>
+<td><textarea rows=3 cols=30 name=txtdesc id="txtdesc"></textarea></td>
+</tr>
+<tr>
+	<td colspan="3" align="center"><INput name="Submit" type="submit" value="SUBMIT"  >
+    </td>
+
+	  
+
+</tr>
+</table>
+</form>
+<ul id="footer">
+  <li>&copy; 2018 <a href='index.html'>Xskynet</a></li>
+  </ul>
+</body>
+</html>
